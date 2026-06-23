@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Nauteliani</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background:
+          linear-gradient(rgba(25, 0, 40, 0.45), rgba(25, 0, 40, 0.45)),
+          url("pic/angelaskin.jpg");
+
+        background-size: 40%;
+        background-position: center;
+        background-attachment: fixed;
+
+        min-height: 100vh;
+        overflow-x: hidden;
+        color: white;
+      }
+
+      /* Floating lights */
+
+      body::before {
+        content: "";
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle, #ff8ae220 2px, transparent 3px);
+        background-size: 80px 80px;
+        animation: moveBg 15s linear infinite;
+        z-index: -1;
+      }
+
+      @keyframes moveBg {
+        from {
+          transform: translateY(0);
+        }
+        to {
+          transform: translateY(80px);
+        }
+      }
+
+      /* Header */
+
+      header {
+        width: 100%;
+        padding: 25px;
+        backdrop-filter: blur(20px);
+        background: rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      .profile-pic {
+        width: 160px;
+        height: 160px;
+
+        border-radius: 50%;
+        border: 5px solid #ffd6f9;
+
+        overflow: hidden;
+
+        box-shadow:
+          0 0 25px #ff9dfd,
+          0 0 50px #ff9dfd;
+      }
+
+      .profile-pic img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .site-name {
+        margin-top: 15px;
+        font-size: 40px;
+        font-weight: 700;
+
+        background: linear-gradient(45deg, #fff, #ffc5f3);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .tagline {
+        margin-top: 10px;
+        font-size: 18px;
+        opacity: 0.9;
+      }
+
+      /* Main */
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: auto;
+        padding: 40px 0;
+      }
+
+      /* Card */
+
+      .card {
+        background: rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(15px);
+
+        padding: 30px;
+
+        border-radius: 30px;
+
+        margin-bottom: 30px;
+
+        border: 1px solid rgba(255, 255, 255, 0.2);
+
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .card h2 {
+        margin-bottom: 20px;
+        color: #ffd6ff;
+      }
+
+      /* Buttons */
+
+      .btn-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 20px;
+      }
+
+      .bubble-btn {
+        padding: 18px;
+
+        border: none;
+        border-radius: 50px;
+
+        font-size: 16px;
+        font-weight: 600;
+
+        cursor: pointer;
+
+        background: linear-gradient(45deg, #ff7de7, #ffb3f8);
+
+        color: white;
+
+        transition: 0.3s;
+
+        position: relative;
+
+        overflow: hidden;
+
+        text-decoration: none;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .bubble-btn:hover {
+        transform: translateY(-5px) scale(1.05);
+
+        box-shadow:
+          0 0 20px #ff89f0,
+          0 0 40px #ff89f0;
+      }
+
+      .bubble-btn::before {
+        content: "";
+
+        position: absolute;
+
+        top: -50%;
+        left: -50%;
+
+        width: 200%;
+        height: 200%;
+
+        background: linear-gradient(
+          transparent,
+          rgba(255, 255, 255, 0.4),
+          transparent
+        );
+
+        transform: rotate(25deg);
+
+        transition: 0.7s;
+      }
+
+      .bubble-btn:hover::before {
+        left: 100%;
+      }
+
+      /* Footer */
+
+      footer {
+        text-align: center;
+        padding: 30px;
+
+        font-size: 14px;
+
+        color: #ffe6ff;
+      }
+
+      /* Hearts */
+
+      .heart {
+        position: fixed;
+
+        font-size: 25px;
+
+        pointer-events: none;
+
+        animation: floatUp 1s linear forwards;
+      }
+
+      @keyframes floatUp {
+        0% {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+
+        100% {
+          opacity: 0;
+          transform: translateY(-120px) scale(2);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .site-name {
+          font-size: 30px;
+        }
+
+        .profile-pic {
+          width: 120px;
+          height: 120px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="profile-pic">
+        <img src="pic/beki.jpg" alt="Profile" title="Rebeck" />
+      </div>
+
+      <h1 class="site-name">Nauteliani</h1>
+
+      <p class="tagline">Mobile Legends Content Creator</p>
+    </header>
+
+    <div class="container">
+      <div class="card">
+        <h2>🌸 Connect With Me</h2>
+
+        <div class="btn-grid">
+          <a href="https://youtube.com/@nautei-24?si=8ETbjZbXK2YRwiOa" class="bubble-btn">YouTube</a>
+
+          <a href="https://www.instagram.com/_nauteliani__?igsh=dzg3YTl5MXRtOG5k&utm_source=qr" class="bubble-btn">Instagram</a>
+
+          <a href="#" class="bubble-btn">Facebook</a>
+
+          <a href="https://wa.me/qr/Y6OAI6B4GAQPN1" class="bubble-btn">WhatsApp</a>
+
+          <a href="mailto:rebecklalnunsangi@gmail.com" class="bubble-btn">Gmail</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>✨ Future Pages</h2>
+
+        <div class="btn-grid">
+          <a href="#" class="bubble-btn">Gallery</a>
+
+          <a href="#" class="bubble-btn">Gameplay</a>
+
+          <a href="#" class="bubble-btn">Live Stream</a>
+
+          <a href="#" class="bubble-btn">Fan Art</a>
+
+          <a href="#" class="bubble-btn">More Pages</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>💖 About Me</h2>
+
+        <p>
+          Welcome to Nauteliani. I create Mobile Legends content, highlights,
+          gameplay edits, tutorials and fun moments for YouTube, Instagram and
+          Facebook. Thank you for supporting my journey.
+        </p>
+      </div>
+    </div>
+
+    <footer>© 2026 Nauteliani • All Rights Reserved</footer>
+
+    <script>
+      document.addEventListener("click", (e) => {
+        const heart = document.createElement("div");
+
+        heart.classList.add("heart");
+
+        heart.innerHTML = ["💖", "✨", "🌸", "💗", "⭐"][
+          Math.floor(Math.random() * 5)
+        ];
+
+        heart.style.left = e.pageX + "px";
+        heart.style.top = e.pageY + "px";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+          heart.remove();
+        }, 1000);
+      });
+    </script>
+  </body>
+</html>
